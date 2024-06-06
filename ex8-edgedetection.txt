@@ -1,0 +1,73 @@
+% sobel, prewitt,robert, log,zerocross and canny edge detection
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+% Apply Sobel edge detection
+J = edge(I, 'Sobel');
+% Display the results
+subplot(1, 2, 1);
+imshow(I);
+title('Original Grayscale Image');
+subplot(1, 2, 2);
+imshow(J);
+title('Sobel Edge Detection');
+
+
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+% Apply Prewitt edge detection
+K = edge(I, 'Prewitt');
+% Display the results
+figure;
+imshow(K);
+title('Prewitt Edge Detection');
+
+
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+% Apply Roberts edge detection
+L = edge(I, 'Roberts');
+% Display the results
+figure;
+imshow(L);
+title('Roberts Edge Detection');
+
+
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+% Apply LoG edge detection
+M = edge(I, 'log');
+% Display the results
+figure;
+imshow(M);
+title('LoG Edge Detection');
+
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+% Apply zero-crossing edge detection
+N = edge(I, 'zerocross');
+% Display the results
+figure;
+imshow(N);
+title('Zero-Crossing Edge Detection');
+
+
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+% Apply Canny edge detection
+O = edge(I, 'Canny');
+% Display the results
+figure;
+imshow(O);
+title('Canny Edge Detection');

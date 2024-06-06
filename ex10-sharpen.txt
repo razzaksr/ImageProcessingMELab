@@ -1,0 +1,15 @@
+% Read the grayscale image (replace with your image path)
+I = imread('path/to/your/image.png');
+I = rgb2gray(I); % Convert to grayscale if needed
+
+% Sharpen the image using unsharp masking
+B = imsharpen(I);
+
+% Display the original and sharpened images
+subplot(1, 2, 1);
+imshow(I);
+title('Original Image');
+
+subplot(1, 2, 2);
+imshow(B);
+title('Sharpened Image (Unsharp Masking)');

@@ -1,0 +1,30 @@
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+
+% Create a mask image in which the ROI is true and the background is false
+mask = zeros(size(I));
+mask(50:150, 100:200) = 1; % Define the ROI (adjust coordinates as needed)
+
+% Fill the regions in the input image using the mask image
+J = regionfill(I, mask);
+
+% Display the filled image
+imshow(J);
+title('Filled Region of Interest');
+
+
+% Read the grayscale image
+I = imread('flowers.jpg');
+I = rgb2gray(I);
+
+% Specify the vertices of a polygon ROI
+x = [100, 200, 200, 100]; % X-coordinates
+y = [50, 50, 150, 150];   % Y-coordinates
+
+% Fill the polygon by using the regionfill function
+K = regionfill(I, x, y);
+
+% Display the filled image
+imshow(K);
+title('Filled Region of Interest (Polygon)');
